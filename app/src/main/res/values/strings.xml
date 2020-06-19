@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Event Reminder</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="home_fragment_label">Home</string>
+    <string name="form_fragment_label">Add an Event</string>
+
+    <string name="name">Name</string>
+    <string name="required">*Required</string>
+    <string name="birthday">Birthday</string>
+    <string name="phone">Phone</string>
+    <string name="form_submit">Add Reminder</string>
+
+    <!-- Output to TextView styled with a little HTML -->
+    <string name="title"><![CDATA[<h3>Birthdays:</h3>]]></string>
+    <string name="entry_name"><![CDATA[<b>Name:</b>]]></string>
+    <string name="entry_birthday"><![CDATA[<b>Birthday:</b>]]></string>
+    <string name="entry_phone"><![CDATA[<b>Phone Number:</b>]]></string>
+</resources>
