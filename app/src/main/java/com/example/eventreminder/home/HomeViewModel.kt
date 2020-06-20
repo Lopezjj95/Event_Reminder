@@ -35,11 +35,11 @@ fun formatBirthdays(birthdays: List<Birthday>, resources: Resources): Spanned {
         birthdays.forEach {
             append("<br>")
             append(resources.getString(R.string.entry_name))
-            append("\t${it.entryName}<br>")
+            append("\t${it.name}<br>")
             append(resources.getString(R.string.entry_birthday))
-            append("\t${it.entryBirthday}<br>")
+            append("\t${it.birthday}<br>")
             append(resources.getString(R.string.entry_phone))
-            append("\t${it.entryPhoneNumber}<br>")
+            append("\t${it.phoneNumber}<br>")
         }
     }
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

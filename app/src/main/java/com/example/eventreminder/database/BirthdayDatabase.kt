@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-/** Creates the database that the birthdays are stored in */
-@Database(entities = [Birthday::class], version = 1, exportSchema = false)
+/** Database that the birthdays are stored in */
+@Database(entities = [Birthday::class], version = 2, exportSchema = false)
 abstract class BirthdayDatabase : RoomDatabase() {
 
     abstract val birthdayDatabaseDao: BirthdayDatabaseDao
@@ -18,10 +18,7 @@ abstract class BirthdayDatabase : RoomDatabase() {
      */
     companion object {
 
-        /*
-         * creates reference to database to avoid repeatedly opening connections to the database;
-         * improving performance
-         */
+        // creates reference to database to avoid repeatedly opening connections to the database
         @Volatile
         private var INSTANCE: BirthdayDatabase? = null
 
