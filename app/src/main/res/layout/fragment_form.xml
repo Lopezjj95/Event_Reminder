@@ -102,7 +102,7 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/colorAccent"
-            android:onClick="@{() -> formViewModel.onStartTracking()}"
+            android:onClick="@{() -> formViewModel.onFormSubmit()}"
             android:text="@string/form_submit"
             app:icon="@drawable/ic_add_alert"
             app:layout_constraintBottom_toBottomOf="parent"

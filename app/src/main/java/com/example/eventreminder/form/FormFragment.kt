@@ -23,6 +23,7 @@ class FormFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
 
+        // Get a reference to the binding object and inflate the fragment views
         val binding = DataBindingUtil.inflate<FragmentFormBinding>(inflater,
             R.layout.fragment_form, container, false)
 
@@ -31,18 +32,21 @@ class FormFragment : Fragment() {
             view.findNavController().navigate(R.id.action_FormFragment_to_HomeFragment)
         }
 
+        // get reference to application context
         val application = requireNotNull(this.activity).application
         // get reference to DAO
         val dataSource = BirthdayDatabase.getInstance(application).birthdayDatabaseDao
+        // create instance of HomeViewModelFactory and pass refs to app context and dao
         val viewModelFactory = FormViewModelFactory(dataSource, application)
 
-        // get reference to form ViewModel
+        // get reference to form ViewModel and assign binding variable to view model
         val formViewModel =
             ViewModelProviders.of(
                 this, viewModelFactory).get(FormViewModel::class.java)
         binding.formViewModel = formViewModel
 
-        binding.setLifecycleOwner(this)
+        // set current activity as the lifecycle owner of the binding object
+        binding.lifecycleOwner = this
 
 
         return binding.root

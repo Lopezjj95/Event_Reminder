@@ -19,15 +19,15 @@ class HomeViewModel(
     private val database: BirthdayDatabaseDao,
     application: Application) : AndroidViewModel(application) {
 
-    // get list of birthdays from database
+    // get all birthdays from database
     private val birthdays = database.getAllBirthdays()
-    // reformat birthday list to string
+    // reformat birthday list to string for display
     val birthdaysString = Transformations.map(birthdays) { birthdays ->
         formatBirthdays(birthdays, application.resources)
     }
 }
 
-// Method that reformats birthday list data for readability
+// Method that reformats birthday list data for display
 fun formatBirthdays(birthdays: List<Birthday>, resources: Resources): Spanned {
     val sb = StringBuilder()
     sb.apply {
