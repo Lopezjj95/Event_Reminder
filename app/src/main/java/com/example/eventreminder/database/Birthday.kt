@@ -15,10 +15,10 @@ data class Birthday(
     @PrimaryKey(autoGenerate = true)
     var birthdayId: Long = 0L,
 
-    var name: String = "New Entry Name",
+    var name: String = "",
 
-    var birthday: String = "New Entry Birthday",
+    var birthday: String = "",
 
     @ColumnInfo(name = "phone_number")
-    var phoneNumber: String = "New Entry Phone Number"
+    var phoneNumber: String = ""
 )
