@@ -20,10 +20,14 @@ birthday to the list on the home screen.
   -home TextView displays contents of database as formatted list  
   -added back button for form fragment  
   -added animations for fragment view changes  
-     
-#### To do:  
   -update database insert to use values in form text inputs  
   -update birthday list to use RecycleView to improve performance  
+     
+#### To do:  
+  -add input validation on form text inputs
+  -close keyboard on form submit/back
+  -add ability to delete birthdays from list
+  -add ability to edit birthdays in list
   -implement reminder notifications  
   -create settings menu layout  
-  -save user settings with sharedPreferences  
+  -save user settings with sharedPreferences
