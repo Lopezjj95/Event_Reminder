@@ -24,10 +24,10 @@ birthday to the list on the home screen.
   -update birthday list to use RecycleView to improve performance  
      
 #### To do:  
-  -add input validation on form text inputs 
-  -close keyboard on form submit/back 
-  -add ability to delete birthdays from list 
-  -add ability to edit birthdays in list 
+  -add input validation on form text inputs  
+  -close keyboard on form submit/back  
+  -add ability to delete birthdays from list   
+  -add ability to edit birthdays in list  
   -implement reminder notifications  
   -create settings menu layout  
   -save user settings with sharedPreferences
