@@ -17,6 +17,7 @@ import com.example.eventreminder.databinding.FragmentFormBinding
 /**
  * Implementation of Form Fragment's submit button
  */
+@Suppress("DEPRECATION")
 class FormFragment : Fragment() {
 
     override fun onCreateView(
@@ -28,7 +29,7 @@ class FormFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentFormBinding>(inflater,
             R.layout.fragment_form, container, false)
 
-        // get reference to application context
+        // get reference to application context that this fragment is attached to
         val application = requireNotNull(this.activity).application
         // get reference to DAO
         val dataSource = BirthdayDatabase.getInstance(application).birthdayDatabaseDao

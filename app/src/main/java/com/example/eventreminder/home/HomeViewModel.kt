@@ -20,7 +20,7 @@ class HomeViewModel(
     application: Application) : AndroidViewModel(application) {
 
     // get all birthdays from database
-    private val birthdays = database.getAllBirthdays()
+    val birthdays = database.getAllBirthdays()
     // reformat birthday list to string for display
     val birthdaysString = Transformations.map(birthdays) { birthdays ->
         formatBirthdays(birthdays, application.resources)
@@ -38,8 +38,11 @@ fun formatBirthdays(birthdays: List<Birthday>, resources: Resources): Spanned {
             append("\t${it.name}<br>")
             append(resources.getString(R.string.entry_birthday))
             append("\t${it.birthday}<br>")
-            append(resources.getString(R.string.entry_phone))
-            append("\t${it.phoneNumber}<br>")
+            // only display phone number if the user enters one
+            if(it.phoneNumber != "") {
+                append(resources.getString(R.string.entry_phone))
+                append("\t${it.phoneNumber}<br>")
+            }
         }
     }
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

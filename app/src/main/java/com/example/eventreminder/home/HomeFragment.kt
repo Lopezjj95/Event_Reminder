@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.eventreminder.R
@@ -47,6 +48,17 @@ class HomeFragment : Fragment() {
         // set current activity as the lifecycle owner of the binding object
         binding.lifecycleOwner = this
 
+        // set birthday list to use birthday list adapter
+        val adapter = BirthdayListAdapter()
+        binding.birthdayList.adapter = adapter
+
+        // observe changes in birthdays LiveData
+        homeViewModel.birthdays.observe(viewLifecycleOwner, Observer {
+            // assign non-null values to birthday list adapter's data
+            it?.let {
+                adapter.data = it
+            }
+        })
 
         return binding.root
     }

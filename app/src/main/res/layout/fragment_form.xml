@@ -105,7 +105,6 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/colorAccent"
-
             android:text="@string/form_submit"
             app:icon="@drawable/ic_add_alert"
             app:layout_constraintBottom_toBottomOf="parent"

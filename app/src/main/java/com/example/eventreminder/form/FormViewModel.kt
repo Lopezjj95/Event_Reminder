@@ -10,6 +10,7 @@ import kotlinx.coroutines.*
 
 /**
  * ViewModel for FormFragment
+ * Stores and manages UI-related data
  */
 class FormViewModel(
     private val database: BirthdayDatabaseDao,
@@ -43,7 +44,7 @@ class FormViewModel(
     }
 
     fun doneNavigating() {
-        _navigateToHome.value = null
+        _navigateToHome.value = false
     }
 
     // cancel all coroutines when view model is destroyed
